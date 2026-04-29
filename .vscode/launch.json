@@ -8,7 +8,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",        // Main Python file (do not modify)
             "console": "integratedTerminal",
-            "args": ["--input-reactor", 
+            "args": ["--input-reactor",
                      "${workspaceFolder}/Reactors/R0.json", // Path to the reactor's JSON definition
                      "--gamma",
                      "0.9",                                 // Discount factor employed in the MDP
@@ -22,7 +22,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",        // Main Python file (do not modify)
             "console": "integratedTerminal",
-            "args": ["--input-reactor", 
+            "args": ["--input-reactor",
                      "${workspaceFolder}/Reactors/R1.json", // Path to the reactor's JSON definition
                      "--gamma",
                      "0.9",                                 // Discount factor employed in the MDP
@@ -36,7 +36,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",        // Main Python file (do not modify)
             "console": "integratedTerminal",
-            "args": ["--input-reactor", 
+            "args": ["--input-reactor",
                      "${workspaceFolder}/Reactors/R2.json", // Path to the reactor's JSON definition
                      "--gamma",
                      "0.9",                                 // Discount factor employed in the MDP
@@ -50,7 +50,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",        // Main Python file (do not modify)
             "console": "integratedTerminal",
-            "args": ["--input-reactor", 
+            "args": ["--input-reactor",
                      "${workspaceFolder}/Reactors/R3.json", // Path to the reactor's JSON definition
                      "--gamma",
                      "0.9",                                 // Discount factor employed in the MDP
@@ -59,17 +59,59 @@
         },
 
         {
-            "name": "Test_04",
+            "name": "Test_04",                              // Reactor TRMPS (determinista, exigido por el enunciado)
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
-            "args": ["--input-reactor", 
-                    "${workspaceFolder}/Reactors/R4.json",
-                    "--gamma",
-                    "0.9",
-                    "--random-seed",
-                    "42"]
+            "args": ["--input-reactor",
+                     "${workspaceFolder}/Reactors/R4.json",
+                     "--gamma",
+                     "0.9",
+                     "--random-seed",
+                     "42"]
+        },
+
+        {
+            "name": "Test_05",                              // Reactor IDEAL (cuasi-determinista, baseline)
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["--input-reactor",
+                     "${workspaceFolder}/Reactors/R5.json",
+                     "--gamma",
+                     "0.9",
+                     "--random-seed",
+                     "42"]
+        },
+
+        {
+            "name": "Test_06",                              // Reactor CHAOS (equiprobable, máxima incertidumbre)
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["--input-reactor",
+                     "${workspaceFolder}/Reactors/R6.json",
+                     "--gamma",
+                     "0.9",
+                     "--random-seed",
+                     "42"]
+        },
+
+        {
+            "name": "Test_07",                              // Reactor BIASED-UP (tiende a aumentar, peligroso)
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["--input-reactor",
+                     "${workspaceFolder}/Reactors/R7.json",
+                     "--gamma",
+                     "0.9",
+                     "--random-seed",
+                     "42"]
         }
 
     ]
