@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Test_00",                              // Name of the current test
             "type": "debugpy",
@@ -55,6 +56,21 @@
                      "0.9",                                 // Discount factor employed in the MDP
                      "--random-seed",
                      "42"]                                  // Random seed for the experiment
+        },
+
+        {
+            "name": "Test_04",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "args": ["--input-reactor", 
+                    "${workspaceFolder}/Reactors/R4.json",
+                    "--gamma",
+                    "0.9",
+                    "--random-seed",
+                    "42"]
         }
+
     ]
 }
