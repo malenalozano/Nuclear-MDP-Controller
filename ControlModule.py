@@ -57,8 +57,10 @@ class ControlModule:
         # Generar la matriz de costes para la demanda actual
         R = ControlModule.generate_R(demand, n_states, n_actions)
 
-        # Crear y resolver el MDP con Value Iteration
-        mdp = mdptoolbox.mdp.ValueIteration(P, R, gamma)
+        # Crear y resolver el MDP con Value Iteration.
+        # mdptoolbox MAXIMIZA recompensas, por lo que pasamos -R para que
+        # equivalga a MINIMIZAR los costes (distancias a la demanda).
+        mdp = mdptoolbox.mdp.ValueIteration(P, -R, gamma)
         mdp.run()
 
         # Devolver la acción óptima para el estado actual

@@ -30,9 +30,7 @@ def R2(y_true: np.ndarray, y_pred: np.ndarray) -> np.float64:
 
 def Corr(y_true: np.ndarray, y_pred: np.ndarray) -> np.float64:
     """ Implementation of the Pearson's Correlation Coefficient """
-    ### TO BE COMPLETED BY THE STUDENTS ###
-    
-    ### DUMMY BEHAVIOUR TO PREVENT CRASHING (MUST BE DELETED AFTER THE FULL IMPLEMENTATION) ###
-    cov = np.cov(y_true, y_pred)[0, 1]
-    return cov / (np.std(y_true) * np.std(y_pred))
-    ### ###
+    # np.corrcoef usa una convención coherente para varianzas y covarianza,
+    # evitando inconsistencias entre np.cov (ddof=1) y np.std (ddof=0)
+    # que harían que la correlación pudiera salirse del intervalo [-1, 1].
+    return np.corrcoef(y_true, y_pred)[0, 1]
